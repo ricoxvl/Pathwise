@@ -1,0 +1,35 @@
+{
+  "catalog_id": "utdallas-cist-2026-poc-v1",
+  "completed": [
+    {
+      "code": "ITSS 3300"
+    },
+    {
+      "code": "ITSS 3311"
+    },
+    {
+      "code": "MATH 1325"
+    },
+    {
+      "code": "OPRE 3333"
+    },
+    {
+      "code": "ITSS 4381"
+    }
+  ],
+  "planned_terms": [
+    {
+      "term": "2027-spring",
+      "courses": [
+        "ITSS 4300",
+        "ITSS 4330"
+      ]
+    },
+    {
+      "term": "2027-fall",
+      "courses": [
+        "ITSS 4370"
+      ]
+    }
+  ]
+}
