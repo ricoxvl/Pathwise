@@ -1,0 +1,460 @@
+{
+  "id": "utdallas-cist-2026-poc-v1",
+  "university": "The University of Texas at Dallas",
+  "program": "BS Computer Information Systems and Technology — limited course-sequencing proof of concept",
+  "catalog_year": 2026,
+  "rules_version": 1,
+  "source_url": "https://catalog.utdallas.edu/2026/undergraduate/programs/jsom/computer-information-systems-and-technology",
+  "limitations": "Only selected ITSS course prerequisites have been transcribed from the official 2026 catalog; no degree completion, credit substitution, standing, or course availability decisions are supported.",
+  "courses": [
+    {
+      "code": "ITSS 3312",
+      "title": "Object-Oriented Programming",
+      "rule": {
+        "kind": "all",
+        "items": [
+          {
+            "kind": "course",
+            "code": "ITSS 3311"
+          },
+          {
+            "kind": "any",
+            "items": [
+              {
+                "kind": "course",
+                "code": "MATH 1325"
+              },
+              {
+                "kind": "course",
+                "code": "MATH 2413"
+              },
+              {
+                "kind": "course",
+                "code": "MATH 2417"
+              }
+            ]
+          },
+          {
+            "kind": "any",
+            "items": [
+              {
+                "kind": "course",
+                "code": "CS 2305"
+              },
+              {
+                "kind": "course",
+                "code": "MATH 2333"
+              },
+              {
+                "kind": "course",
+                "code": "MATH 2418"
+              },
+              {
+                "kind": "course",
+                "code": "OPRE 3333"
+              }
+            ]
+          }
+        ]
+      },
+      "source_url": "https://catalog.utdallas.edu/2026/undergraduate/courses/itss",
+      "source_section": "ITSS 3312: prerequisites in 2026 ITSS course descriptions",
+      "scope_note": ""
+    },
+    {
+      "code": "ITSS 4381",
+      "title": "Object Oriented Programming with Python",
+      "rule": {
+        "kind": "all",
+        "items": [
+          {
+            "kind": "course",
+            "code": "ITSS 3311"
+          },
+          {
+            "kind": "any",
+            "items": [
+              {
+                "kind": "course",
+                "code": "MATH 1325"
+              },
+              {
+                "kind": "course",
+                "code": "MATH 2413"
+              },
+              {
+                "kind": "course",
+                "code": "MATH 2417"
+              }
+            ]
+          },
+          {
+            "kind": "any",
+            "items": [
+              {
+                "kind": "course",
+                "code": "CS 2305"
+              },
+              {
+                "kind": "course",
+                "code": "MATH 2333"
+              },
+              {
+                "kind": "course",
+                "code": "MATH 2418"
+              },
+              {
+                "kind": "course",
+                "code": "OPRE 3333"
+              }
+            ]
+          }
+        ]
+      },
+      "source_url": "https://catalog.utdallas.edu/2026/undergraduate/courses/itss",
+      "source_section": "ITSS 4381: prerequisites in 2026 ITSS course descriptions",
+      "scope_note": ""
+    },
+    {
+      "code": "ITSS 4300",
+      "title": "Database Fundamentals",
+      "rule": {
+        "kind": "all",
+        "items": [
+          {
+            "kind": "course",
+            "code": "ITSS 3300"
+          },
+          {
+            "kind": "course",
+            "code": "ITSS 3311"
+          },
+          {
+            "kind": "any",
+            "items": [
+              {
+                "kind": "course",
+                "code": "MATH 1325"
+              },
+              {
+                "kind": "course",
+                "code": "MATH 2413"
+              },
+              {
+                "kind": "course",
+                "code": "MATH 2417"
+              }
+            ]
+          },
+          {
+            "kind": "any",
+            "items": [
+              {
+                "kind": "course",
+                "code": "CS 2305"
+              },
+              {
+                "kind": "course",
+                "code": "MATH 2333"
+              },
+              {
+                "kind": "course",
+                "code": "MATH 2418"
+              },
+              {
+                "kind": "course",
+                "code": "OPRE 3333"
+              }
+            ]
+          }
+        ]
+      },
+      "source_url": "https://catalog.utdallas.edu/2026/undergraduate/courses/itss",
+      "source_section": "ITSS 4300: prerequisites in 2026 ITSS course descriptions",
+      "scope_note": ""
+    },
+    {
+      "code": "ITSS 4330",
+      "title": "Systems Analysis and Design",
+      "rule": {
+        "kind": "all",
+        "items": [
+          {
+            "kind": "any",
+            "items": [
+              {
+                "kind": "course",
+                "code": "ITSS 3312"
+              },
+              {
+                "kind": "course",
+                "code": "BUAN 4381"
+              },
+              {
+                "kind": "course",
+                "code": "ITSS 4381"
+              }
+            ]
+          },
+          {
+            "kind": "any",
+            "items": [
+              {
+                "kind": "course",
+                "code": "MATH 1325"
+              },
+              {
+                "kind": "course",
+                "code": "MATH 2413"
+              },
+              {
+                "kind": "course",
+                "code": "MATH 2417"
+              }
+            ]
+          },
+          {
+            "kind": "any",
+            "items": [
+              {
+                "kind": "course",
+                "code": "CS 2305"
+              },
+              {
+                "kind": "course",
+                "code": "MATH 2333"
+              },
+              {
+                "kind": "course",
+                "code": "MATH 2418"
+              },
+              {
+                "kind": "course",
+                "code": "OPRE 3333"
+              }
+            ]
+          },
+          {
+            "kind": "course",
+            "code": "ITSS 4300",
+            "concurrent_allowed": true
+          }
+        ]
+      },
+      "source_url": "https://catalog.utdallas.edu/2026/undergraduate/courses/itss",
+      "source_section": "ITSS 4330: prerequisites in 2026 ITSS course descriptions",
+      "scope_note": ""
+    },
+    {
+      "code": "ITSS 4370",
+      "title": "Information Technology Infrastructure",
+      "rule": {
+        "kind": "all",
+        "items": [
+          {
+            "kind": "course",
+            "code": "ITSS 3300"
+          },
+          {
+            "kind": "any",
+            "items": [
+              {
+                "kind": "course",
+                "code": "MATH 1325"
+              },
+              {
+                "kind": "course",
+                "code": "MATH 2413"
+              },
+              {
+                "kind": "course",
+                "code": "MATH 2417"
+              }
+            ]
+          },
+          {
+            "kind": "any",
+            "items": [
+              {
+                "kind": "course",
+                "code": "CS 2305"
+              },
+              {
+                "kind": "course",
+                "code": "MATH 2333"
+              },
+              {
+                "kind": "course",
+                "code": "MATH 2418"
+              },
+              {
+                "kind": "course",
+                "code": "OPRE 3333"
+              }
+            ]
+          },
+          {
+            "kind": "course",
+            "code": "ITSS 4330",
+            "concurrent_allowed": true
+          }
+        ]
+      },
+      "source_url": "https://catalog.utdallas.edu/2026/undergraduate/courses/itss",
+      "source_section": "ITSS 4370: prerequisites in 2026 ITSS course descriptions",
+      "scope_note": ""
+    },
+    {
+      "code": "ITSS 4312",
+      "title": "Mobile Web Application Development",
+      "rule": {
+        "kind": "any",
+        "items": [
+          {
+            "kind": "course",
+            "code": "ITSS 3312"
+          },
+          {
+            "kind": "course",
+            "code": "ITSS 4381"
+          }
+        ]
+      },
+      "source_url": "https://catalog.utdallas.edu/2026/undergraduate/courses/itss",
+      "source_section": "ITSS 4312: prerequisites in 2026 ITSS course descriptions",
+      "scope_note": ""
+    },
+    {
+      "code": "ITSS 4380",
+      "title": "Advanced Database Management",
+      "rule": {
+        "kind": "course",
+        "code": "ITSS 4300"
+      },
+      "source_url": "https://catalog.utdallas.edu/2026/undergraduate/courses/itss",
+      "source_section": "ITSS 4380: prerequisites in 2026 ITSS course descriptions",
+      "scope_note": ""
+    },
+    {
+      "code": "ITSS 4351",
+      "title": "Foundations of Business Intelligence",
+      "rule": {
+        "kind": "all",
+        "items": [
+          {
+            "kind": "course",
+            "code": "ITSS 3300"
+          },
+          {
+            "kind": "any",
+            "items": [
+              {
+                "kind": "course",
+                "code": "BUAN 4320"
+              },
+              {
+                "kind": "course",
+                "code": "ITSS 4300"
+              }
+            ]
+          },
+          {
+            "kind": "any",
+            "items": [
+              {
+                "kind": "course",
+                "code": "MATH 1325"
+              },
+              {
+                "kind": "course",
+                "code": "MATH 2413"
+              },
+              {
+                "kind": "course",
+                "code": "MATH 2417"
+              }
+            ]
+          },
+          {
+            "kind": "any",
+            "items": [
+              {
+                "kind": "course",
+                "code": "CS 2305"
+              },
+              {
+                "kind": "course",
+                "code": "MATH 2333"
+              },
+              {
+                "kind": "course",
+                "code": "MATH 2418"
+              },
+              {
+                "kind": "course",
+                "code": "OPRE 3333"
+              }
+            ]
+          }
+        ]
+      },
+      "source_url": "https://catalog.utdallas.edu/2026/undergraduate/courses/itss",
+      "source_section": "ITSS 4351: prerequisites in 2026 ITSS course descriptions",
+      "scope_note": ""
+    },
+    {
+      "code": "ITSS 4301",
+      "title": "Database Systems",
+      "rule": {
+        "kind": "all",
+        "items": [
+          {
+            "kind": "course",
+            "code": "ACCT 2301",
+            "min_grade": "C"
+          },
+          {
+            "kind": "course",
+            "code": "ACCT 2302",
+            "min_grade": "C"
+          },
+          {
+            "kind": "course",
+            "code": "ITSS 3300"
+          },
+          {
+            "kind": "any",
+            "items": [
+              {
+                "kind": "course",
+                "code": "MATH 1325"
+              },
+              {
+                "kind": "course",
+                "code": "MATH 2413"
+              },
+              {
+                "kind": "course",
+                "code": "MATH 2417"
+              }
+            ]
+          }
+        ]
+      },
+      "source_url": "https://catalog.utdallas.edu/2026/undergraduate/courses/itss",
+      "source_section": "ITSS 4301: prerequisites in 2026 ITSS course descriptions",
+      "scope_note": "The official BS CIST degree catalog excludes ITSS 4301 from counting toward major requirements; this record only demonstrates prerequisite/grade validation."
+    },
+    {
+      "code": "ITSS 4371",
+      "title": "Cloud Computing with AWS",
+      "rule": {
+        "kind": "course",
+        "code": "ITSS 3300"
+      },
+      "source_url": "https://catalog.utdallas.edu/2026/undergraduate/courses/itss",
+      "source_section": "ITSS 4371: prerequisites in 2026 ITSS course descriptions",
+      "scope_note": ""
+    }
+  ]
+}
