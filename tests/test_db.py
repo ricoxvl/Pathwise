@@ -1,7 +1,7 @@
+import pytest
 from sqlalchemy import create_engine
 from sqlalchemy.orm import Session
 from sqlalchemy.pool import StaticPool
-import pytest
 
 from pathwise.db import Base, builtin_catalog, load_catalog, seed_catalog
 

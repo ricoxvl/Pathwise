@@ -7,7 +7,7 @@ import os
 from collections.abc import Generator
 from importlib.resources import files
 
-from sqlalchemy import ForeignKey, Integer, JSON, String, create_engine, select
+from sqlalchemy import JSON, ForeignKey, Integer, String, create_engine, select
 from sqlalchemy.orm import DeclarativeBase, Mapped, Session, mapped_column
 
 from pathwise.schemas import CatalogSpec, CourseRule

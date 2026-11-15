@@ -5,12 +5,12 @@ from dataclasses import dataclass
 from typing import Literal
 
 from pathwise.schemas import (
+    GRADE_ORDER,
     AssessmentRequest,
     AssessmentResponse,
     CatalogSpec,
     CourseAssessment,
     RuleNode,
-    GRADE_ORDER,
 )
 
 Check = Literal["met", "conditional", "missing", "unknown"]
@@ -107,7 +107,8 @@ def evaluate(catalog: CatalogSpec, request: AssessmentRequest) -> AssessmentResp
                 if dependency.status in {"uncertain", "unsupported"}:
                     return Result("unknown", f"{code} has unverified eligibility in {position[1]}")
                 return Result(
-                    "conditional", f"{code} must be successfully completed/enrolled in {position[1]}"
+                    "conditional",
+                    f"{code} must be successfully completed/enrolled in {position[1]}",
                 )
         return Result("missing", f"Missing prerequisite {describe(node)} for {target}")
 
@@ -166,7 +167,8 @@ def evaluate(catalog: CatalogSpec, request: AssessmentRequest) -> AssessmentResp
         evaluations=evaluations,
         disclaimers=[
             "Unofficial technical proof of concept; not affiliated with UT Dallas.",
-            "Prerequisite checks are not a degree audit, enrollment approval, or graduation prediction.",
+            "Prerequisite checks are not a degree audit, enrollment approval, "
+            "or graduation prediction.",
             "Only the explicitly modeled 2026 catalog rules are checked. "
             "Standing, transfer equivalencies, waivers, full degree requirements, "
             "offering schedules, and capacity are not assessed.",

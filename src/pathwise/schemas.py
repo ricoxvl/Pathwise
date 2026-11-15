@@ -135,7 +135,9 @@ class AssessmentRequest(BaseModel):
         planned = [code for entry in self.planned_terms for code in entry.courses]
         all_courses = completed + planned
         if len(all_courses) != len(set(all_courses)):
-            raise ValueError("A course cannot appear more than once or in both completed and planned")
+            raise ValueError(
+                "A course cannot appear more than once or in both completed and planned"
+            )
         return self
 
 
