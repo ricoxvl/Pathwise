@@ -37,6 +37,7 @@ class RuleRow(Base):
         String(120), ForeignKey("catalog_releases.id"), primary_key=True
     )
     code: Mapped[str] = mapped_column(String(20), primary_key=True)
+    position: Mapped[int] = mapped_column(Integer)
     rule_payload: Mapped[dict] = mapped_column(JSON)
 
 
@@ -84,9 +85,9 @@ def seed_catalog(session: Session, catalog: CatalogSpec) -> bool:
         source_url=catalog.source_url, limitations=catalog.limitations,
         content_hash=digest,
     ))
-    for rule in catalog.courses:
+    for position, rule in enumerate(catalog.courses):
         session.add(RuleRow(
-            catalog_id=catalog.id, code=rule.code,
+            catalog_id=catalog.id, code=rule.code, position=position,
             rule_payload=rule.model_dump(mode="json"),
         ))
     session.commit()
@@ -98,7 +99,7 @@ def load_catalog(session: Session, catalog_id: str) -> CatalogSpec | None:
     if not record:
         return None
     items = session.scalars(
-        select(RuleRow).where(RuleRow.catalog_id == catalog_id).order_by(RuleRow.code)
+        select(RuleRow).where(RuleRow.catalog_id == catalog_id).order_by(RuleRow.position)
     ).all()
     return CatalogSpec(
         id=record.id, university=record.university, program=record.program,
