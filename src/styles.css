@@ -521,3 +521,10 @@ p,h1,h2,h3,h4{margin-top:0}
   .brief-item{break-inside:avoid}
   @page{size:letter;margin:.7in}
 }
+
+/* Small-screen roadmap is horizontally scrollable instead of squeezing term labels. */
+@media(max-width:570px){
+  .roadmap{display:flex;gap:18px;overflow-x:auto;padding-bottom:20px;scroll-snap-type:x proximity;scrollbar-width:thin}
+  .roadmap-step{flex:0 0 133px;min-width:133px;scroll-snap-align:start}
+  .roadmap-line{left:6px;right:auto;width:625px;min-width:625px}
+}

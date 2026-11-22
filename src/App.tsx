@@ -126,11 +126,12 @@ export default function App() {
   const [answer,setAnswer] = useState<ReturnType<typeof explainQuestion>|null>(null);
   const [importMessage,setImportMessage] = useState('');
   const [notice,setNotice] = useState('');
+  const skipNextSave = useRef(false);
   const fileRef = useRef<HTMLInputElement|null>(null);
   const review = useMemo(()=>evaluate(profile),[profile]);
   const scenarios = useMemo(()=>getScenarios(profile),[profile]);
   const issues = riskCounts(review);
-  useEffect(()=>{try{localStorage.setItem(STORAGE_KEY,JSON.stringify(profile));}catch{/* browser storage may be disabled */}},[profile]);
+  useEffect(()=>{if(skipNextSave.current){skipNextSave.current=false;return;}try{localStorage.setItem(STORAGE_KEY,JSON.stringify(profile));}catch{/* browser storage may be disabled */}},[profile]);
   useEffect(()=>{
     const handler=()=>{setPage(initialPage());setMobileNav(false);window.scrollTo({top:0,behavior:'instant'});};
     window.addEventListener('hashchange',handler);
@@ -172,6 +173,7 @@ export default function App() {
   function erase() {
     if(!window.confirm('Delete the locally saved plan? The page will return to the fictional demo.'))return;
     try{localStorage.removeItem(STORAGE_KEY);}catch{/* storage disabled */}
+    skipNextSave.current=true;
     setProfile(cloneDemo());showNotice('Local data deleted. The sample demo is shown.');
   }
   function ask(q:string) {setQuestion(q);setAnswer(explainQuestion(q,profile));}
@@ -232,7 +234,7 @@ function Overview({profile,review,issues,expandedRisk,setExpandedRisk,go}:{
  profile:Profile;review:Review;issues:{high:number;medium:number};expandedRisk:string|null;setExpandedRisk:(v:string|null)=>void;go:(p:Page)=>void
 }) {
   const last=review.projected?termLabel(review.projected):'Unresolved';
-  const cardTerms=TERMS.filter(t=>review.termCredits[t]&&review.termCredits[t]!>0).slice(0,5);
+  const cardTerms=TERMS.filter(t=>(review.termCredits[t]??0)>0).slice(0,5);
   return <>
     <div className="welcome-strip"><div><p className="eyebrow">YOUR DEGREE HEALTH / NOVEMBER 2026 DEMO</p><h1>Good to see you, {displayStudent(profile.student)} <span className="wave">✳</span></h1><p>Here's where your academic journey stands today.</p></div><button className="welcome-action" onClick={()=>go('scenarios')}>Explore scenarios <ArrowUpRight size={16}/></button></div>
     <Disclaimer short/>
