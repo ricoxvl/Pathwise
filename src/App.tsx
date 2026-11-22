@@ -3,7 +3,7 @@ import {
   Activity, ArrowDownToLine, ArrowLeft, ArrowRight, ArrowUpRight, BookOpen, CalendarDays,
   Check, CheckCheck, CheckCircle2, ChevronDown, ChevronRight, CircleAlert, ClipboardList,
   Clock3, Compass, Download, FileDown, FileText, GraduationCap, HelpCircle, Info,
-  Layers3, LayoutDashboard, LockKeyhole, Menu, MessageCircle, MoveRight, Network,
+  Layers3, LayoutDashboard, LockKeyhole, Menu, Network,
   RotateCcw, Route, Search, Send, Settings2, ShieldCheck, Sparkles, Target, Upload,
   WandSparkles, X, type LucideIcon
 } from 'lucide-react';

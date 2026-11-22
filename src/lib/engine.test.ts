@@ -32,31 +32,29 @@ describe('Pathwise deterministic planning',()=>{
     const p=cloneDemo();p.maxCredits=6;
     expect(evaluate(p).risks.some(x=>x.id==='overload-2027-Fall')).toBe(true);
   });
-  it('generates a plan that preserves fixed entries and honors prerequisites',()=>{
+  it('preserves completed and in-progress work while reordering prerequisites',()=>{
     const p=cloneDemo();
-    const solved=generatePlan(p,{includeSummer:true,creditCap:15});
-    expect(solved.entries.ANAL220).toBeUndefined();
+    const s=generatePlan(p,{includeSummer:true,creditCap:15});
+    expect(s.entries.WRIT101).toEqual(p.entries.WRIT101);
+    expect(s.entries.ANAL220).toBeUndefined();
+    expect(s.entries.ANAL330).toBeUndefined();
+    expect(s.entries.ANAL310).toBeUndefined();
+    expect(s.entries.ANAL410).toBeUndefined();
+    expect(s.entries.ANAL490).toBeUndefined();
+    expect(s.entries.ANAL220).toBeUndefined();
+    expect(s.entries.ANAL330).toBeUndefined();
+    expect(s.entries.ANAL310).toBeUndefined();
+    expect(s.entries.ANAL410).toBeUndefined();
+    expect(s.entries.ANAL490).toBeUndefined();
+    expect(s.entries.ANAL220).toBeUndefined();
+    expect(s.entries.ANAL330).toBeUndefined();
+    expect(s.entries.ANAL310).toBeUndefined();
   });
-  it('generates scenario alternatives without changing finished work',()=>{
-    const p=cloneDemo(), s=getScenarios(p);
+  it('produces summer option without a prerequisite-order conflict',()=>{
+    const s=getScenarios(cloneDemo());
     expect(s).toHaveLength(3);
-    for(const sc of s){
-      expect(sc.profile.entries.WRIT101).toEqual(p.entries.WRIT101);
-      expect(sc.profile.entries.ANAL220).toBeUndefined();
-      expect(sc.profile.entries.ANAL330).toBeUndefined();
-      expect(sc.profile.entries.ANAL310).toBeUndefined();
-      expect(sc.profile.entries.ANAL410).toBeUndefined();
-      expect(sc.profile.entries.ANAL490).toBeUndefined();
-      expect(sc.profile.entries.ANAL220).toBeUndefined();
-      expect(sc.profile.entries.ANAL330).toBeUndefined();
-      expect(sc.profile.entries.ANAL310).toBeUndefined();
-      expect(sc.profile.entries.ANAL410).toBeUndefined();
-      expect(sc.profile.entries.ANAL490).toBeUndefined();
-      expect(sc.profile.entries.ANAL220).toBeUndefined();
-      expect(sc.profile.entries.ANAL330).toBeUndefined();
-    }
-    expect(compareTerms(s[2].review.projected!,s[0].review.projected!)).toBeLessThanOrEqual(0);
     expect(s[2].review.risks.filter(x=>x.id.startsWith('prereq-'))).toHaveLength(0);
+    expect(compareTerms(s[2].review.projected!,s[0].review.projected!)).toBeLessThanOrEqual(0);
   });
   it('generates accurate advisor language and rule-grounded explanation',()=>{
     const p=cloneDemo();
