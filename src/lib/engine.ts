@@ -1,4 +1,4 @@
-import { COURSE_BY_ID, COURSES, GROUPS, TERMS, type Course, type GroupId, type PlanEntry, type Profile, type Term, isCourseStatus, isTerm, termLabel } from './demo';
+import { COURSE_BY_ID, COURSES, GROUPS, TERMS, type Course, type GroupId, type PlanEntry, type Profile, type Term, isCourseStatus, isTerm, termLabel } from './demo.ts';
 
 export type Risk = {
   id: string;
