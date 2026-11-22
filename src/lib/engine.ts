@@ -35,7 +35,7 @@ export function validateProfile(value: unknown): value is Profile {
       !isTerm(p.target) || !Number.isInteger(p.maxCredits) || Number(p.maxCredits) < 3 || Number(p.maxCredits) > 24 ||
       !p.entries || typeof p.entries !== 'object' || Array.isArray(p.entries)) return false;
   const entries = p.entries as Record<string, unknown>;
-  if (Object.keys(entries).some(id => !COURSE_BY_ID[id])) return false;
+  if (Object.keys(entries).some(id => !Object.hasOwn(COURSE_BY_ID,id))) return false;
   return Object.values(entries).every(value => {
     if (!value || typeof value !== 'object') return false;
     const e = value as Record<string, unknown>;
@@ -96,7 +96,7 @@ export function evaluate(profile: Profile): Review {
   return {risks,groups,completed,total:COURSES.length,creditsEarned,creditsRequired,projected,targetMet,termCredits,unscheduled};
 }
 export function updateCourse(profile:Profile,id:string,entry:PlanEntry):Profile {
-  if(!COURSE_BY_ID[id] || !isCourseStatus(entry.status) ||
+  if(!Object.hasOwn(COURSE_BY_ID,id) || !isCourseStatus(entry.status) ||
      (entry.term!==null && !isTerm(entry.term))) return profile;
   return {...profile,entries:{...profile.entries,[id]:entry}};
 }

@@ -2,7 +2,7 @@
 
 ## Executable automated coverage
 
-`src/lib/engine.test.ts` covers fictional profile schema validation, prerequisite violations, credit accounting, unscheduled requirements, workload warnings, solver outputs, advisor text and rule IDs.
+`tests/engine.test.mjs` covers fictional profile schema validation, prerequisite violations, credit accounting, unscheduled requirements, workload warnings, solver outputs, advisor text and rule IDs.
 
 ## Unverified outcomes
 

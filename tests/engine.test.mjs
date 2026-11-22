@@ -8,6 +8,7 @@ test('fictional demo profile validates, unknown courses and invalid limits do no
   assert.equal(validateProfile(p),true);
   assert.equal(validateProfile({...p,maxCredits:0}),false);
   assert.equal(validateProfile({...p,entries:{...p.entries,'FAKE999':{status:'completed',term:null}}}),false);
+  assert.equal(validateProfile({...p,entries:{...p.entries,'constructor':{status:'completed',term:null}}}),false);
 });
 test('flags same-term prerequisites and late target',()=>{
   const review=evaluate(cloneDemo());
